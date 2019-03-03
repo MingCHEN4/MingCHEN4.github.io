@@ -3,7 +3,7 @@ layout: post
 title: This is for test!
 ---
 
-This is for test!
+How to post private blog?
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
