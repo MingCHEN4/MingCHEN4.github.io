@@ -4,7 +4,6 @@ title: Markdown CheatSheet!
 ---
 
 source: from [Github] (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-[Github Markdown Cheatsheet] (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
