@@ -141,7 +141,7 @@ HTML的<a>标签最重要的属性是href，其指示的链接目标可以是外
 [Github Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
 
 
-`![pears](https://github.com/MingCHEN4/MingCHEN4.github.io/blob/master/images/IMG_2889.jpg)`  
+`![ ](https://)`  
 ![pears](https://raw.githubusercontent.com/MingCHEN4/MingCHEN4.github.io/master/images/IMG_2889.jpg)
 
 
