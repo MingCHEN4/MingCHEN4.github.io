@@ -141,8 +141,8 @@ HTML的<a>标签最重要的属性是href，其指示的链接目标可以是外
 [Github Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)  
 
 
-`![_config.yml](https://github.com/MingCHEN4/MingCHEN4.github.io/blob/master/images/IMG_2889.jpg)`  
-![_config.yml](https://github.com/MingCHEN4/MingCHEN4.github.io/blob/master/images/IMG_2889.jpg)  
+`![pears](https://github.com/MingCHEN4/MingCHEN4.github.io/blob/master/images/IMG_2889.jpg)`  
+![pears](https://raw.githubusercontent.com/MingCHEN4/MingCHEN4.github.io/master/images/IMG_2889.jpg)
 
 
 `[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=gjsVyvMZr2o&index=9&list=LL1Zf7z3vBNhFRJ5QE_evpJg&t=431s)`  
