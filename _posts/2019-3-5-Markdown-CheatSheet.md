@@ -21,13 +21,7 @@ source: from [Github Markdown](https://github.com/adam-p/markdown-here/wiki/Mark
 创建华丽分割线，使用---（三横线上方不要有文字）。
 效果如下
 
-------
-
-三横线上方附有文字的效果如下
-
-三横线上方附有文字
-------
-
+---
 
 #### 1.3 Font emphasis
 Italics, 斜体。使用* *或_ _包裹文字；  
