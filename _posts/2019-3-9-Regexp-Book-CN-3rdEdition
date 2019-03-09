@@ -1,0 +1,11 @@
+---
+layout: post
+title: Regexp-Book-CN-3rd edition-纠错
+---
+
+
+contact: yusheng.regex@gmail.com
+
+#### Chapter 1 - Alternation duoxuanjiegou
+
+'^(From|Subject|Date):.' p83 -> this regex means "match the start of the line, then one of [From], [subject], or [Date], and then match [:.]".
