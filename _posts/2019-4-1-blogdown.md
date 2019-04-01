@@ -18,6 +18,31 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - Chapter 3: ways to publish a website, i.e. other people can visit it through a link.
   - Chapter 4: ways to migrate existing websites from other platforms to Hugo and blogdown.
   - Appendix A: a quick tutorial on R Markdown.
-  - Appendix B: basic knowledge about websites, such as HTML, CSS, and JavaScript. Need to learn then if creator are care about the website.
+  - Appendix B: basic knowledge about websites, such as HTML, CSS, and JavaScript. Need to learn then if creator are care    
+                about the website.
   - Appendix C: ways to have owner's domain name.
   - Appendix D: some optional topics for advanced users.
+- Organization of the posts:
+  - "typically blog posts are stored under the *content/post/* dir"
+  - "pages are under other dirs (including the root *content/* dir and its subdirs), but Hugo doesn't require this stucture."
+  
+  #### Tricks to keep in mind
+  - `blogdown::new_site()` to create a new site, downloading the default theme, add some sample posts, etc. and launch in the      RStudio Viewer.
+  - *LiveReload*
+    - website will be auto rebuilt and reloaded in the web browser when modifying any source file.
+    - `blogdown::serve_site()`
+  - *config.toml*
+    - to custom global settings for the site, e.g. `title = "Ming"`.
+  - *content/*
+    - to write the R Markdown or Markdown source files for the posts and pages. Free to organize arbitrary files and dirs           under *content/* to structure the website.
+  - *public/*
+    - Related with publishing the website, details in Chapter 3.
+    - No need to manually add any files to this dir.
+    - Typically it contains lots of \*.html, \*.css, \*.js, and images.
+    - We can upload everything under *public/* to any web server that can serve static websites, and the website will be up         and running.
+  - *Themes*
+    - custom themes in Section 1.6.
+    - Learning techs like the Hugo templating language, HTML, CSS and JavaScript are required to custom a more complicated and       fancier theme.
+  - *Addins* - *Browse Addins*
+    - *blogdown::newsite* -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`         to write the content of the post.
+    - 
