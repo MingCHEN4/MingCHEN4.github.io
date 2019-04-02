@@ -5,6 +5,8 @@ title: blogdown: Creating self-website using R Markdown
 
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
+## A recommended workflow
+
 #### Things to know | from the Preface
 - "A well-designed and maintained website can be extremely helpful for other people to know you, and you do not need to wait for suitbale chances at conferences or other occasions to introduce yourself in person to other people."
 - Using Hugo to generate static website. All pages are built from blogdown and Hugo.
@@ -115,4 +117,4 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     - under another new dir, install the theme using `blogdown::new_site(theme = "gcushen/hugo-academic") #username/repos`
     - recommended themes: hugo-academic, Tranquilpeak.
 
-    ## A recommended workflow
+
