@@ -87,10 +87,10 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     **Plain Markdown format**
     
     *For plain inline math expressions*
-    ``$math$`` e.g. \`$S_n = \sum_{i=1}^nX_i$\`
+    `\`$math$\`` 
     
     *For display-style expressions*
-    ``$$math$$``
+    `\`$$math$$\``
     
     **R Markdown format**
     
