@@ -30,7 +30,8 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - `blogdown::new_site()` to create a new site, downloading the default theme, add some sample posts, etc. and launch in the      RStudio Viewer.
   - *LiveReload*
     - website will be auto rebuilt and reloaded in the web browser when modifying any source file.
-    - `blogdown::serve_site()`
+    - `blogdown::serve_site().
+    - uncheck both "Preview site after building" and "Re-knit current preview when supporting files change", as the options         are not really useful after calling `serve_site()`.
   - *config.toml*
     - to custom global settings for the site, e.g. `title = "Ming"`.
   - *content/*
@@ -43,6 +44,63 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - *Themes*
     - custom themes in Section 1.6.
     - Learning techs like the Hugo templating language, HTML, CSS and JavaScript are required to custom a more complicated and       fancier theme.
-  - *Addins* - *Browse Addins*
-    - *blogdown::newsite* -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`         to write the content of the post.
-    - 
+  - *Addins* -> *Browse Addins*
+    - *blogdown::New Post* -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`       to write the content of the post. Sig to specify **categories and tags** to better organize the posts!
+    - *blogdown::Update Metadata* -> update the YAML metadata of the currently opened post.
+  - *Build Website*
+    - `blogdown::newsite()` -> a pane in RStudio named "Build" -> click "Build Website" button -> RStudio subsequently call         `blogdown::buildsite()` func -> files will be auto generated in the *public/* dir;
+    - followed up with above steps -> restart R and click "Build Website" -> publish the website.
+  - *Global options*
+    - Set global options either use a global profile *~/.Rprofile* or a per-project *.Rprofile* under the project, the former       will be applied to all R sessions, unless we use latter setting to override it. Global options, e.g. blogdown.author to       set the default author of new posts, blogdown.ext to set the default extension of new posts, like ".md".
+    - `file.edit("~/.Rprofile")` to set global options for all R sessions.
+    - e.g. `options(blogdown.ext = ".md", blogdown.author = "Ming")`
+    - After above setting, everytime I use the RStudio addin "New Post", the options will be auto populated.
+    - Note that R will silently ignore the last line of ur .Rprofile if it doesn't have a trailing newline, so make sure add         at least one newline to the end of the .Rprofile.
+  
+    #### R Markdown vs. Markdown
+    1. For R code chunks
+    
+    **Plain Markdown format**
+    > \`\`\`r # no {} here
+    
+    > R code chunks
+    
+    > \`\`\`
+    
+    disadvantage: R code will not be executed...
+    
+    advantage: for pure demonstration purposes.
+    
+    **vs.**
+    
+    **R Markdown format**
+    > \`\`\`{r}
+    
+    > R code chunks
+    
+    > \`\`\`
+    
+    advantage: R code will be executed and corresponding results will be displayed! :)
+    
+    2. For math expressions
+    The authors added **MathJax** support to the default theme (hugo-lithium) in blogdown to render LaTeX math on HTML pages.
+    
+    **Plain Markdown format**
+    
+    *For plain inline math expressions*
+    ``$math$`` e.g. \`$S_n = \sum_{i=1}^nX_i$\`
+    
+    *For display-style expressions*
+    ``$$math$$``
+    
+    **R Markdown format**
+    
+    *For plain inline math expressions*
+    `$math$`
+    
+    *For display-style expressions*
+    `$$math$$`
+    
+    **Note:**
+      - Most R Markdown syntax is similar as plain Markdown.
+      - R Markdown doc is compiled through packages rmarkdown, [bookdown(https://bookdown.org/yihui/bookdown/components.html)         and [Pandoc](http://pandoc.org/MANUAL.html#pandocs-markdown), by which most features are avail. Yihui recommended             reading doc of Pandoc and bookdown to know possi features. Example website [here](https://blogdown-demo.rbind.io).
