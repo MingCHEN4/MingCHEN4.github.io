@@ -62,9 +62,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     
     **Plain Markdown format**
     > \`\`\`r # no {} here
-    
     > R code chunks
-    
     > \`\`\`
     
     disadvantage: R code will not be executed...
@@ -75,9 +73,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     
     **R Markdown format**
     > \`\`\`{r}
-    
-    R code chunks
-    
+    > R code chunks
     > \`\`\`
     
     advantage: R code will be executed and corresponding results will be displayed! :)
