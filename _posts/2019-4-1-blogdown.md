@@ -5,9 +5,9 @@ title: blogdown: Creating self-website using R Markdown
 
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
-## A recommended workflow
+# A recommended workflow
 
-#### Things to know | from the Preface
+## Things to know | from the Preface
 - "A well-designed and maintained website can be extremely helpful for other people to know you, and you do not need to wait for suitbale chances at conferences or other occasions to introduce yourself in person to other people."
 - Using Hugo to generate static website. All pages are built from blogdown and Hugo.
 - Authors' homepage to refer:
@@ -28,7 +28,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - "typically blog posts are stored under the *content/post/* dir"
   - "pages are under other dirs (including the root *content/* dir and its subdirs), but Hugo doesn't require this stucture."
   
-  #### Tricks to keep in mind
+  ## Tricks to keep in mind
   - `blogdown::new_site()` to create a new site, downloading the default theme, add some sample posts, etc. and launch in the      RStudio Viewer.
   - *LiveReload*
     - website will be auto rebuilt and reloaded in the web browser when modifying any source file.
@@ -59,7 +59,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     - After above setting, everytime I use the RStudio addin "New Post", the options will be auto populated.
     - Note that R will silently ignore the last line of ur .Rprofile if it doesn't have a trailing newline, so make sure add         at least one newline to the end of the .Rprofile.
   
-    #### R Markdown vs. Markdown
+    ## R Markdown vs. Markdown
     1. For R code chunks
     
     **Plain Markdown format**
@@ -111,7 +111,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
      - If code chunk has graphic output, avoid using special char like spaces in the chunk label, try to use alphanumeric char        and dashes, e.g. \`\`\`{r, my-label}\`\`\` instead of \`\`\`{r, my label}\`\`\`.
      - Temporarily change extension from .Rmd to unknown extension such as .Rmkd to prevent blogdown from compiling the R            Markdown post.
      
-    #### Other themes
+    ## Other themes
     [Hugo themes](http://themes.gohugo.io). Not all themes have been tested against blogdown. If not working, try a diff one.
     - pick a fancy theme, note down the GitHub username and repository name
     - under another new dir, install the theme using `blogdown::new_site(theme = "gcushen/hugo-academic") #username/repos`
