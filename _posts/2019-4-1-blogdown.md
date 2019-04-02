@@ -64,6 +64,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 1. For R code chunks
     
   **Plain Markdown format**
+  
     > \`\`\`r # no {} here  
     > R code chunks  
     > \`\`\`
@@ -75,6 +76,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   **vs.**
     
   **R Markdown format**
+  
     > \`\`\`{r}  
     > R code chunks  
     > \`\`\`
@@ -82,9 +84,8 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   advantage: R code will be executed and corresponding results will be displayed! :)
 
 
- 2. For math expressions
-    The authors added **MathJax** support to the default theme (hugo-lithium) in blogdown to render LaTeX math on HTML pages.
-    
+2. For math expressions: The authors added **MathJax** support to the default theme (hugo-lithium) in blogdown to render LaTeX math on HTML pages.
+
     **Plain Markdown format**
     
     *For plain inline math expressions*
@@ -101,22 +102,22 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     *For display-style expressions*
     `$$math$$`
     
-    **Note:**
-    - Most R Markdown syntax is similar as plain Markdown.
-    - R Markdown doc is compiled through packages rmarkdown, [bookdown(https://bookdown.org/yihui/bookdown/components.html)         and [Pandoc](http://pandoc.org/MANUAL.html#pandocs-markdown), by which most features are avail. Yihui recommended             reading doc of Pandoc and bookdown to know possi features. Example website [here](https://blogdown-demo.rbind.io).
-    - There is another type of R Markdown doc with extension .Rmarkdown, such doc are processed by Hugo instead of Pandoc.           We cannot use Markdown features onlu supported by Pandoc, such as citations. In fact, there is a limited func with             compiling .Rmarkdown.
-    - Use `rmarkdown::html_document` to set options for the format `blogdown::html_page`, e.g. to set options for                   blogdown::html_page() globally, create a `_output.yml` file under the root dir of the website. The YAML files should           contain the output format directly, below is an example
+**Note:**
+- Most R Markdown syntax is similar as plain Markdown.
+- R Markdown doc is compiled through packages rmarkdown, [bookdown(https://bookdown.org/yihui/bookdown/components.html)         and [Pandoc](http://pandoc.org/MANUAL.html#pandocs-markdown), by which most features are avail. Yihui recommended             reading doc of Pandoc and bookdown to know possi features. Example website [here](https://blogdown-demo.rbind.io).
+- There is another type of R Markdown doc with extension .Rmarkdown, such doc are processed by Hugo instead of Pandoc.           We cannot use Markdown features onlu supported by Pandoc, such as citations. In fact, there is a limited func with             compiling .Rmarkdown.
+- Use `rmarkdown::html_document` to set options for the format `blogdown::html_page`, e.g. to set options for                   blogdown::html_page() globally, create a `_output.yml` file under the root dir of the website. The YAML files should           contain the output format directly, below is an example
       > blogdown::html_page:  
       >   toc: true  
       >   fig_width: 6 # 6 inches  
       >   dev: "svg" # for plots
-   - If code chunk has graphic output, avoid using special char like spaces in the chunk label, try to use alphanumeric char        and dashes, e.g. \`\`\`{r, my-label}\`\`\` instead of \`\`\`{r, my label}\`\`\`.
-   - Temporarily change extension from .Rmd to unknown extension such as .Rmkd to prevent blogdown from compiling the R            Markdown post.
+- If code chunk has graphic output, avoid using special char like spaces in the chunk label, try to use alphanumeric char        and dashes, e.g. \`\`\`{r, my-label}\`\`\` instead of \`\`\`{r, my label}\`\`\`.
+- Temporarily change extension from .Rmd to unknown extension such as .Rmkd to prevent blogdown from compiling the R            Markdown post.
      
 ## Other themes
 [Hugo themes](http://themes.gohugo.io). Not all themes have been tested against blogdown. If not working, try a diff one.
-  - pick a fancy theme, note down the GitHub username and repository name
-  - under another new dir, install the theme using `blogdown::new_site(theme = "gcushen/hugo-academic") #username/repos`
-  - recommended themes: hugo-academic, Tranquilpeak.
+- pick a fancy theme, note down the GitHub username and repository name
+- under another new dir, install the theme using `blogdown::new_site(theme = "gcushen/hugo-academic") #username/repos`
+- recommended themes: hugo-academic, Tranquilpeak.
 
 
