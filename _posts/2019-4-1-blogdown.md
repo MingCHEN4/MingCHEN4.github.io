@@ -76,7 +76,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     **R Markdown format**
     > \`\`\`{r}
     
-    > R code chunks
+    R code chunks
     
     > \`\`\`
     
