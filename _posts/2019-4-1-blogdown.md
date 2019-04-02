@@ -60,10 +60,9 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - Note that R will silently ignore the last line of ur .Rprofile if it doesn't have a trailing newline, so make sure add         at least one newline to the end of the .Rprofile.
   
 ## R Markdown vs. Markdown
-
-1. For R code chunks
+- For R code chunks
     
-  **Plain Markdown format**
+    **Plain Markdown format**
   
     > \`\`\`r # no {} here  
     > R code chunks  
@@ -75,16 +74,15 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     
   **vs.**
     
-  **R Markdown format**
+   **R Markdown format**
   
     > \`\`\`{r}  
     > R code chunks  
     > \`\`\`
     
   advantage: R code will be executed and corresponding results will be displayed! :)
-
-
-2. For math expressions: The authors added **MathJax** support to the default theme (hugo-lithium) in blogdown to render LaTeX math on HTML pages.
+  
+- For math expressions: The authors added **MathJax** support to the default theme (hugo-lithium) in blogdown to render LaTeX math on HTML pages.
 
     **Plain Markdown format**
     
