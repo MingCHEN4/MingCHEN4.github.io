@@ -64,7 +64,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     
     **Plain Markdown format**
   
-    > \`\`\`r # no {} here  
+    > \`\`\`r \# no {} here  
     > R code chunks  
     > \`\`\`
     
