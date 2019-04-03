@@ -47,7 +47,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - custom themes in Section 1.6.
   - Learning techs like the Hugo templating language, HTML, CSS and JavaScript are required to custom a more complicated and       fancier theme.
 - *Addins* -> *Browse Addins*
-  - *blogdown::New Post* -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`       to write the content of the post. Sig to specify **categories and tags** to better organize the posts!
+  - `blogdown::New Post` -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`       to write the content of the post. Sig to specify **categories and tags** to better organize the posts!
   - `blogdown::Update Metadata` -> update the YAML metadata of the currently opened post.
 - *Build Website*
   - `blogdown::newsite()` -> a pane in RStudio named "Build" -> click "Build Website" button -> RStudio subsequently call         `blogdown::buildsite()` func -> files will be auto generated in the *public/* dir;
@@ -87,10 +87,14 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
     **Plain Markdown format**
     
     *For plain inline math expressions*  
-    ``$math$`` 
+    ```
+    `$math$`
+    ```
     
     *For display-style expressions*  
-    `\`$$math$$\``
+    ```
+    `$$math$$`
+    ```
     
     **R Markdown format**
     
@@ -104,11 +108,11 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 - Most R Markdown syntax is similar as plain Markdown.
 - R Markdown doc is compiled through packages rmarkdown, [bookdown(https://bookdown.org/yihui/bookdown/components.html)         and [Pandoc](http://pandoc.org/MANUAL.html#pandocs-markdown), by which most features are avail. Yihui recommended             reading doc of Pandoc and bookdown to know possi features. Example website [here](https://blogdown-demo.rbind.io).
 - There is another type of R Markdown doc with extension .Rmarkdown, such doc are processed by Hugo instead of Pandoc.           We cannot use Markdown features onlu supported by Pandoc, such as citations. In fact, there is a limited func with             compiling .Rmarkdown.
-- Use `rmarkdown::html_document` to set options for the format `blogdown::html_page`, e.g. to set options for                   blogdown::html_page() globally, create a `_output.yml` file under the root dir of the website. The YAML files should           contain the output format directly, below is an example
-      > blogdown::html_page:  
-      >   toc: true  
-      >   fig_width: 6 # 6 inches  
-      >   dev: "svg" # for plots
+- Use `rmarkdown::html_document` to set options for the format `blogdown::html_page`, e.g. to set options for                   blogdown::html_page() globally, create a `_output.yml` file under the root dir of the website. The YAML files should           contain the output format directly, below is an example  
+> blogdown::html_page:  
+>   toc: true  
+>   fig_width: 6 # 6 inches  
+>   dev: "svg" # for plots
 - If code chunk has graphic output, avoid using special char like spaces in the chunk label, try to use alphanumeric char        and dashes, e.g. \`\`\`{r, my-label}\`\`\` instead of \`\`\`{r, my label}\`\`\`.
 - Temporarily change extension from .Rmd to unknown extension such as .Rmkd to prevent blogdown from compiling the R            Markdown post.
      
