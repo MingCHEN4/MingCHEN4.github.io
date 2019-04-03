@@ -32,7 +32,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 - `blogdown::new_site()` to create a new site, downloading the default theme, add some sample posts, etc. and launch in the      RStudio Viewer.
 - *LiveReload*
   - website will be auto rebuilt and reloaded in the web browser when modifying any source file.
-  - `blogdown::serve_site().
+  - `blogdown::serve_site()`.
   - uncheck both "Preview site after building" and "Re-knit current preview when supporting files change", as the options         are not really useful after calling `serve_site()`.
 - *config.toml*
   - to custom global settings for the site, e.g. `title = "Ming"`.
@@ -48,7 +48,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
   - Learning techs like the Hugo templating language, HTML, CSS and JavaScript are required to custom a more complicated and       fancier theme.
 - *Addins* -> *Browse Addins*
   - *blogdown::New Post* -> Execute -> Install Package -> type info such as title, author, etc. -> edit auto created `*.md`       to write the content of the post. Sig to specify **categories and tags** to better organize the posts!
-  - *blogdown::Update Metadata* -> update the YAML metadata of the currently opened post.
+  - `blogdown::Update Metadata` -> update the YAML metadata of the currently opened post.
 - *Build Website*
   - `blogdown::newsite()` -> a pane in RStudio named "Build" -> click "Build Website" button -> RStudio subsequently call         `blogdown::buildsite()` func -> files will be auto generated in the *public/* dir;
   - followed up with above steps -> restart R and click "Build Website" -> publish the website.
@@ -86,18 +86,18 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
     **Plain Markdown format**
     
-    *For plain inline math expressions*
-    `\`$math$\`` 
+    *For plain inline math expressions*  
+    ``$math$`` 
     
-    *For display-style expressions*
+    *For display-style expressions*  
     `\`$$math$$\``
     
     **R Markdown format**
     
-    *For plain inline math expressions*
+    *For plain inline math expressions*  
     `$math$`
     
-    *For display-style expressions*
+    *For display-style expressions*  
     `$$math$$`
     
 **Note:**
