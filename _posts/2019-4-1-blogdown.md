@@ -6,7 +6,31 @@ title: blogdown: Creating self-website using R Markdown
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
 # A recommended workflow
+- **To start a new website**  
+1. pick a theme at [Hugo](http://themes.gohugo.io) -> "Download" to find the GitHub repository link, e.g. https://github.com/gcushen/hugo-academic.  
+2. Create a new project in RStudio -> `blog-down::new_site(theme = gcushen/hugo-academic)`.  
+3. Edit the options in **config.toml** if necessary, details in the **README** page of the theme.
 
+- **To edit a website**  
+1. Open the project -> "Tools" -> "Addins" -> "Serve Site" to preview the site in Viewer.  
+2. "Addins" -> "New Post" to create a new post or page, then edit the content.  
+3. "Addins" -> Update Metadata" to modify the YAML metadata if necessary.  
+
+- **To publish a website  
+- Without GitHub way
+1. Restart the R session -> `blogdown::hugo_build()`, then a "public/" dir is created under the root dir of the project.  
+2. Log into [Netlify](https://www.netlify.com/) using the GitHub account.  
+3. Is this your first time to publish a website?  
+  - Y. Create a new site -> Drag and drop the "public/" folder to the indicated area on the Netlify web page.  
+  - N. Update the existing site you created last time.  
+4. Wait for Netlify to deploy the files, and the assigned random subdomain of the form "random-word-12345.netlify.com".  
+5. Change the random subdomain to a more meaningful one.  
+
+- With GitHub way  
+Create a new website on Netlify from the GitHub repos that contains the source files of the website, so that we could continuously deploy the site instead of manually uploading the "public/" every time.
+Details in Chapter 3.
+
+---
 ## Things to know | from the Preface
 - "A well-designed and maintained website can be extremely helpful for other people to know you, and you do not need to wait for suitbale chances at conferences or other occasions to introduce yourself in person to other people."
 - Using Hugo to generate static website. All pages are built from blogdown and Hugo.
