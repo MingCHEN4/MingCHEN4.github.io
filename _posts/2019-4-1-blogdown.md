@@ -1,8 +1,8 @@
-
 ---
 layout: post
 title: blogdown | Creating self-website using R Markdown
 ---
+
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
 # A recommended workflow
