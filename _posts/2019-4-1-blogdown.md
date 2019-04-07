@@ -1,8 +1,8 @@
+
 ---
 layout: post
-title: blogdown: Creating self-website using R Markdown
+title: blogdown | Creating self-website using R Markdown
 ---
-
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 
 # A recommended workflow
@@ -16,7 +16,7 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 2. "Addins" -> "New Post" to create a new post or page, then edit the content.  
 3. "Addins" -> Update Metadata" to modify the YAML metadata if necessary.  
 
-- **To publish a website  
+- **To publish a website**  
 - Without GitHub way
 1. Restart the R session -> `blogdown::hugo_build()`, then a "public/" dir is created under the root dir of the project.  
 2. Log into [Netlify](https://www.netlify.com/) using the GitHub account.  
