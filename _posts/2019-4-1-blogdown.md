@@ -59,7 +59,25 @@ Details in Chapter 3.
   - `blogdown::serve_site()`.
   - uncheck both "Preview site after building" and "Re-knit current preview when supporting files change", as the options         are not really useful after calling `serve_site()`.
 - *config.toml*
-  - to custom global settings for the site, e.g. `title = "Ming"`.
+  - in the root dir, i.e. /config.toml.
+  - options like title, description of the site, links to social networks, the navigation menu, and the base URL for the site.
+  - set global settings, e.g. `title = "Ming"`. All options are listed [here](https://gohugo.io/overview/configuration/).
+  - useful options  
+  ```
+  # links to show on each page
+  [social]
+	    github = "https://github.com/rstudio/blogdown"
+  	  twitter = "https://twitter.com/rstudio"
+  ```
+  
+  ```
+  # generate permanent links of the page. ":slug" is recommended instead of ":title". A slug is used to identify a specific       post. A slug will not change, even if the title changes, e.g. change title of a post from "title1" to "title2", and the       post's title was used in the URL, the old links will be broken if we set the options with ":title". If we specified the       URL via ":slug", then the link will not be broken when changing the title as many times we'd like!
+  [permalinks]
+      post = "/:year/:month/:day/:slug"
+  ```
+  
+  ```
+  # [params]
 - *content/*
   - to write the R Markdown or Markdown source files for the posts and pages. Free to organize arbitrary files and dirs           under *content/* to structure the website.
 - *public/*
