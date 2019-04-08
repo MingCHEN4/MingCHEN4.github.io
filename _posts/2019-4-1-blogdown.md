@@ -4,6 +4,7 @@ title: blogdown | Creating self-website using R Markdown
 ---
 
 Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
+**Note**: "" means the content is collected from the source book.
 
 # A recommended workflow
 - **To start a new website**  
@@ -16,9 +17,23 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 2. "Addins" -> "New Post" to create a new post or page, then edit the content.  
 3. "Addins" -> Update Metadata" to modify the YAML metadata if necessary.  
 
+- **To customize the site**  
+- Using config.toml to set global options without touching theme authors' template files.  
+  Refer to following **config.toml** section for more details.
+  
+- The other way is to leave a few lightweight template files under "layouts/" in the theme, so that we could override them without touching the core template files. Take the XMin theme for example:  
+Yihui put two empty HTML files *head_custom.html* ("will be added inside <head></head> of a page, e.g. to load JavaScript libraries or include CSS style sheets via <link>") and *foot_custom.html* ("added before the footer of a page, e.g. to load additional JavaScript librarier or embed Disqus comments there") under *layouts/partials/* in the theme.  
+
+**Note**:
+
+1. The latter way "means you only need to create and maintain at most two files under layouts/ instead of maintaining all files under themes/. Note that this overriding mechanism applies to all files under layouts/, and is not limited to the partials/ dir. It also applies to any Hugo theme that you actually use for your website, and is not limited to hugo-xmin."
+
+2. Similarly, we can partially override static files using the same mechanism as overriding layouts/ files, i.e. "static/file" will override "themes/theme-name/static/file".
+
 - **To publish a website**  
 - Without GitHub way
 1. Restart the R session -> `blogdown::hugo_build()`, then a "public/" dir is created under the root dir of the project.  
+**Tips**: A doc could be setted as a draft by setting `draft: true` in corresponding YAML metadata. Draft posts will not be rendered if the site is built via `blogdown::build_site() or blogdown::hugo_build()`, but will be rendered in the local preview mode.(**Chapter 3**)
 2. Log into [Netlify](https://www.netlify.com/) using the GitHub account.  
 3. Is this your first time to publish a website?  
   - Y. Create a new site -> Drag and drop the "public/" folder to the indicated area on the Netlify web page.  
@@ -29,6 +44,9 @@ Source: [Yihui Xie, et al. blogdown](https://bookdown.org/yihui/blogdown)
 - With GitHub way  
 Create a new website on Netlify from the GitHub repos that contains the source files of the website, so that we could continuously deploy the site instead of manually uploading the "public/" every time.
 Details in Chapter 3.
+
+**Tips**  
+- `weight`: which is YAML metadata, is used to tell Hugo the order of pages when sorting them, e.g. when you generate a list of all pages under a dir, and two posts have the same date, you may assign diff weights to them to get the desired order on the lis.  
 
 ---
 ## Things to know | from the Preface
@@ -63,11 +81,31 @@ Details in Chapter 3.
   - options like title, description of the site, links to social networks, the navigation menu, and the base URL for the site.
   - set global settings, e.g. `title = "Ming"`. All options are listed [here](https://gohugo.io/overview/configuration/).
   - useful options  
+  
   ```
+  # baseurl: set this only when we have a domain name for the site. Do not forget the trailing slash.
+  baseurl = "/"  
+  
+  # relativeurls: Set this only if we want to view the site locally through the file viewer. Defaul is false, it means the       site must be viewed via a web server, e.g. blogdown::serve_site() has provided a local web server, so we can preview the       site locally when relativeurls = false.
+  relativeurls = false
+  
+  # disqusShortname: The Disqus ID created during the account settings at [Disqus](https://disqus.com). Disqus is a system       enabling commenting on the site. Note that setting up a functional baseurl and website publish is required before Disqus       comments func can work.
+  disqusShortname = ""  
+  
+  # ignoreFiles: >=3 patterns patterns (regex) for Hugo is recommended to being ignored when building the site.  
+  ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown", "_files$", "_cache$"]  
+  
+  # .Rmd files should be ignored as blogdown will compile them to .html, and it suffices for Hugo to use the .html files.  
+  # Dir with suffixes _files and _cache should be ignored as they contain auxiliary files after an Rmd file is com[iled.
+  
   # links to show on each page
   [social]
 	    github = "https://github.com/rstudio/blogdown"
-  	  twitter = "https://twitter.com/rstudio"
+  	  twitter = "https://twitter.com/rstudio"  
+
+  # It is recommended to set this option to true, so that Hugo's automatic summary and word count work better.
+  hasCJKLanguage
+  
   ```
   
   ```
@@ -77,7 +115,12 @@ Details in Chapter 3.
   ```
   
   ```
-  # [params]
+  # To avoid repeat coding in Hugo themes, user could set params option to easily edit a single config file to apply the theme   to the site, instead of going through many HTML files and making changes one by one, e.g. .Site.Params.author is Tom with     the following config file:  
+  [params]
+  	author = "Tom"
+	dateFormat = "2006/01/02"
+  ```
+  
 - *content/*
   - to write the R Markdown or Markdown source files for the posts and pages. Free to organize arbitrary files and dirs           under *content/* to structure the website.
 - *public/*
