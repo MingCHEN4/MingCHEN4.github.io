@@ -4,7 +4,7 @@ title: Programming tricks
 ---
 
 
-- grep a list of sites against a large file
+- awk to match a list of sites against a large file
 
 **Input**  
 ```
@@ -38,4 +38,27 @@ $ cat match.vcf
 chr pos1 info...  
 chr pos2 info...  
 chr posN info...  
+```
+
+- awk to get uniq records against a file  
+
+**Input**  
+```
+$ cat test.txt  
+pos1  
+pos2  
+pos2  
+pos5  
+pso5  
+pos6
+```
+
+`awk '!x[$1]++ {print $1}' test.txt`  
+
+**Output**  
+```
+pos1  
+pos2  
+pos5  
+pos6  
 ```
